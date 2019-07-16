@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editEmail.setOnClickListener(this);
         editPassword.setOnClickListener(this);
 
-        progressBar = findViewById(R.id.progressBarLog);
+        //progressBar = findViewById(R.id.progressBarLog);
         progressBar.setVisibility(View.INVISIBLE);
 
 
