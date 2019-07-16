@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_main"
     tools:context=".LoginActivity">
 
     <TextView
@@ -86,6 +87,7 @@
 
     <TextView
         android:id="@+id/textforgot"
+        android:textColor="#FF0000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -113,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textforgot" />
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/progressBarLog"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
