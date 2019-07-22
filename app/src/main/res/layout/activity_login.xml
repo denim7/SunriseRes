@@ -8,14 +8,11 @@
 
     <ImageView
         android:id="@+id/iv_app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginRight="141dp"
-        android:src="@drawable/userphoto"
+        android:layout_width="161dp"
+        android:layout_height="154dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -32,7 +29,7 @@
         android:textSize="@dimen/text_high" />
 
     <EditText
-        android:id="@+id/edtemail"
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -57,9 +54,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/editText3"
+        android:layout_below="@id/editPassword"
         android:layout_marginTop="@dimen/margin_mid"
-        android:layout_alignEnd="@id/editText3"
+        android:layout_alignEnd="@id/editPassword"
         android:text="@string/forgot_password"
         android:textSize="@dimen/text_low"
         android:textColor="@android:color/black"
@@ -67,10 +64,10 @@
         tools:ignore="RtlCompat" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edtemail"
+        android:layout_below="@id/editEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="@dimen/margin_low"
@@ -103,27 +100,19 @@
         android:id="@+id/btnlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_above="@id/btnSignup"
-        android:layout_marginBottom="55dp"
-        android:layout_marginStart="@dimen/margin_high"
-        android:layout_marginEnd="@dimen/margin_high"
-        android:background="@drawable/button_background1"
-        android:text="@string/log_in"
-        android:textSize="18sp"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/raleway_regular"
-        android:textAllCaps="false" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_below="@+id/textforgot"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/colorPrimary"
-        android:visibility="invisible"/>
+        android:layout_marginStart="@dimen/margin_high"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="@dimen/margin_high"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_background1"
+        android:fontFamily="@font/raleway_regular"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
 
 </RelativeLayout>

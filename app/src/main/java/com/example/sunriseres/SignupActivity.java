@@ -36,7 +36,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
      EditText editUsername, editEmail, editPassword;
      Button btnSignup;
      FirebaseAuth mAuth;
-     ProgressBar progressBar;
+     //ProgressBar progressBar;
+     TextView textViewLog;
 
     private static final String TAG = "FirebaseErrors";
 
@@ -59,16 +60,18 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
         btnSignup = findViewById(R.id.btnSignup);
+        textViewLog = findViewById(R.id.textViewLog);
 
 
-        progressBar = findViewById(R.id.progressBarReg);
+        //progressBar = findViewById(R.id.progressBarReg);
 
         btnSignup.setOnClickListener(this);
         editUsername.setOnClickListener(this);
         editEmail.setOnClickListener(this);
         editPassword.setOnClickListener(this);
+        textViewLog.setOnClickListener(this);
     }
-/*
+ /*
     @Override
     public void onStart() {
         super.onStart();
@@ -78,7 +81,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void updateUI(FirebaseUser currentUser) {
-      hideProgressDialog();
+    hideProgressDialog();
         if (users != null) {
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
@@ -132,24 +135,24 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        progressBar.setVisibility(View.INVISIBLE);
+        //progressBar.setVisibility(View.INVISIBLE);
 
         //create new user
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressBar.setVisibility(View.GONE);
+                        //progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            //Log.d(TAG, "createUserWithEmail:success");
+                            Log.d(TAG, "createUserWithEmail:success");
                             //FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
+                           // updateUI(user);
                             Toast.makeText(getApplicationContext(),"User registered successfully.", Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            //Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
@@ -169,7 +172,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.textViewLog:
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 break;
         }
 
