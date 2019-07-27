@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "117338534796",
+    "firebase_url": "https://sunriseres-a497d.firebaseio.com",
+    "project_id": "sunriseres-a497d",
+    "storage_bucket": "sunriseres-a497d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117338534796:android:696a70e2f722731d",
+        "android_client_info": {
+          "package_name": "com.example.sunriseres"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117338534796-5sfcf2t2do6v9n8sit94m1kaugn1s8jp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sunriseres",
+            "certificate_hash": "f44d93b55d8169fcacc4a7b2c3b1fd423404c09f"
+          }
+        },
+        {
+          "client_id": "117338534796-lfbbn3kvevladef3t89a5quca5qudnfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmPpJeKRkffVa5zY-zYQgKS6c8EMj5R5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117338534796-lfbbn3kvevladef3t89a5quca5qudnfo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
