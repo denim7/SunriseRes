@@ -95,7 +95,7 @@
     <Button
         android:id="@+id/btnSignup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@id/textViewLog"
         android:layout_below="@+id/editPassword"
         android:layout_centerHorizontal="true"

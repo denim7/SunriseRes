@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home_menuitem"
+        android:icon="@drawable/ic_home_black"/>
+
+    <item android:title="Overview"
+        android:id="@+id/overview_menuitem"
+        android:icon="@drawable/bg_blue_button"/>
+
+    <item android:title="Menu"
+        android:id="@+id/menu_menuitem"
+        android:icon="@drawable/ic_menu_about"/>
+
+    <item android:title="Review"
+        android:id="@+id/review_menuitem"
+        android:icon="@drawable/ic_menu_slideshow"/>
 
 </menu>

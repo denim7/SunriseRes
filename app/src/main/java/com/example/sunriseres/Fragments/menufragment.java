@@ -3,7 +3,9 @@ package com.example.sunriseres.Fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,6 @@ import com.example.sunriseres.R;
  * to handle interaction events.
  * Use the {@link menufragment#newInstance} factory method to
  * create an instance of this fragment.
- *
  */
 public class menufragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -30,6 +31,10 @@ public class menufragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    public menufragment() {
+        // Required empty public constructor
+    }
 
     /**
      * Use this factory method to create a new instance of
@@ -47,9 +52,6 @@ public class menufragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
-    public menufragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -75,16 +77,7 @@ public class menufragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
 
     @Override
     public void onDetach() {

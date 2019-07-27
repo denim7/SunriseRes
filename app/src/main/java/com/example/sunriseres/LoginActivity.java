@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        isUserLogin();
         setContentView(R.layout.activity_login);
 
         //get firebase auth instance
@@ -75,6 +76,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    /**
+     * Checks if user is logged in
+     */
+
+    private void isUserLogin() {
+        FirebaseUser user  = FirebaseAuth.getInstance().getCurrentUser();
+        if(user!=null){
+        startActivity(  new Intent(LoginActivity.this, MainActivity.class));
+        finish();
+        }
+    }
+
 
     private void userLogin() {
         String email = editEmail.getText().toString().trim();
@@ -106,7 +119,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             /*Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                                     Uri.parse("geo:0,0?q=37.423156,-122.084917 (Sunrise)"));
                             startActivity(intent);*/
-                            startActivity(new Intent(LoginActivity.this, NavActivity.class));
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());

@@ -1,14 +1,23 @@
 package com.example.sunriseres.Fragments;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.sunriseres.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,7 +26,6 @@ import com.example.sunriseres.R;
  * to handle interaction events.
  * Use the {@link overviewfragment#newInstance} factory method to
  * create an instance of this fragment.
- *
  */
 public class overviewfragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -30,6 +38,11 @@ public class overviewfragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+
+    public overviewfragment() {
+        // Required empty public constructor
+    }
 
     /**
      * Use this factory method to create a new instance of
@@ -48,9 +61,6 @@ public class overviewfragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    public overviewfragment() {
-        // Required empty public constructor
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,7 +75,14 @@ public class overviewfragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_overviewfragment, container, false);
+        View view =  inflater.inflate(R.layout.fragment_overviewfragment, container, false);
+        initView(view);
+        return view;
+    }
+
+    private void initView(View view) {
+        ListView list = view.findViewById(R.id.directionlist);
+        list.setAdapter(new ListAdapter());
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -75,16 +92,7 @@ public class overviewfragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
 
     @Override
     public void onDetach() {
@@ -105,5 +113,64 @@ public class overviewfragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+    class ListAdapter extends BaseAdapter{
+        List<Item> lstitem = new ArrayList<>();
+        public ListAdapter() {
+            Item item = new Item();
+            item.setMenu("Open and Closes");
+           lstitem.add(item);
+        }
+
+
+        class Item{
+            int image;
+            String menu;
+
+            public int getImage() {
+                return image;
+            }
+
+            public void setImage(int image) {
+                this.image = image;
+            }
+
+            public String getMenu() {
+                return menu;
+            }
+
+            public void setMenu(String menu) {
+                this.menu = menu;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return lstitem.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            if(view==null){
+                LayoutInflater inflater = getLayoutInflater();
+                view  = inflater.inflate(R.layout.directionlistitem,null);
+
+                TextView txtview = view.findViewById(R.id.txtcaption);
+                Item item = lstitem.get(i);
+
+
+            }
+            return  view;
+        }
     }
 }

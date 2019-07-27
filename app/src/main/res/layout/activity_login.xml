@@ -27,7 +27,6 @@
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_high" />
-
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="match_parent"
@@ -47,6 +46,7 @@
         android:fontFamily="@font/raleway_regular"
         android:hint="@string/email"
         android:textColorHint="@color/colorOpacityBlack"
+        android:nextFocusDown="@id/editPassword"
         tools:ignore="Autofill,RtlCompat" />
 
     <TextView
@@ -99,7 +99,7 @@
     <Button
         android:id="@+id/btnlogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_above="@id/btnSignup"
         android:layout_below="@+id/textforgot"
         android:layout_centerHorizontal="true"

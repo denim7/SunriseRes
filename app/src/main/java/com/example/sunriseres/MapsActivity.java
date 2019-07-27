@@ -1,6 +1,6 @@
 package com.example.sunriseres;
 
-import androidx.appcompat.app.AppCompatActivity;
+/*import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
@@ -18,4 +18,4 @@ public class MapsActivity extends AppCompatActivity {
                     .commitNow();
         }
     }
-}
+}*/
